@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Admin - Peminjaman</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styleB.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- =============== Navigation ================ -->
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="library-outline"></ion-icon>
+                        </span>
+                        <span class="title">Perpustakaan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="book-outline"></ion-icon>
+                        </span>
+                        <span class="title">Peminjaman</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Pengunjung</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="notifications-outline"></ion-icon>
+                        </span>
+                        <span class="title">Notifikasi</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="stats-chart-outline"></ion-icon>
+                        </span>
+                        <span class="title">Laporan</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- =============== Main Content ================ -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Cari Buku atau Pengguna">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <button class="accountBtn">
+                        <ion-icon name="person-outline"></ion-icon>
+                        Akun
+                    </button>
+                </div>
+            </div>
+
+            <!-- =============== Peminjaman Section =============== -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Daftar Peminjaman</h2>
+                        <a href="#" class="btn">Tambah Peminjaman</a>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Nama Peminjam</td>
+                                <td>Judul Buku</td>
+                                <td>Tanggal Peminjaman</td>
+                                <td>Batas Pengembalian</td>
+                                <td>Status</td>
+                                <td>Aksi</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Ahmad Syarif</td>
+                                <td>Pemrograman Python</td>
+                                <td>01 Oktober 2024</td>
+                                <td>15 Oktober 2024</td>
+                                <td><span class="status delivered">Dipinjam</span></td>
+                                <td><button class="btn btn-small">Konfirmasi Pengembalian</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>Siti Aisyah</td>
+                                <td>Pemrograman Java</td>
+                                <td>02 Oktober 2024</td>
+                                <td>16 Oktober 2024</td>
+                                <td><span class="status pending">Terlambat</span></td>
+                                <td><button class="btn btn-small">Notifikasi</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>Rudi Hartono</td>
+                                <td>Belajar Web Design</td>
+                                <td>03 Oktober 2024</td>
+                                <td>17 Oktober 2024</td>
+                                <td><span class="status delivered">Dipinjam</span></td>
+                                <td><button class="btn btn-small">Konfirmasi Pengembalian</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- =============== Formulir Peminjaman Baru =============== -->
+                <div class="recentCustomers">
+                    <div class="cardHeader">
+                        <h2>Tambah Peminjaman</h2>
+                    </div>
+                
+                    <form class="formPeminjaman">
+                        <label for="namaPeminjam">Nama Peminjam:</label>
+                        <input type="text" id="namaPeminjam" name="namaPeminjam" placeholder="Masukkan nama peminjam...">
+                
+                        <label for="judulBuku">Judul Buku:</label>
+                        <input type="text" id="judulBuku" name="judulBuku" placeholder="Masukkan judul buku...">
+                
+                        <label for="tanggalPeminjaman">Tanggal Peminjaman:</label>
+                        <input type="date" id="tanggalPeminjaman" name="tanggalPeminjaman">
+                
+                        <label for="batasPengembalian">Batas Pengembalian:</label>
+                        <input type="date" id="batasPengembalian" name="batasPengembalian">
+                
+                        <button type="submit" class="btn">Tambahkan Peminjaman</button>
+                    </form>
+                </div>                
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

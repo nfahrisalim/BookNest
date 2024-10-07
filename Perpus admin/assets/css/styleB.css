@@ -1,0 +1,49 @@
+/* Update for form styling */
+.formPeminjaman label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--dark-gray);
+}
+
+.formPeminjaman input[type="text"],
+.formPeminjaman input[type="date"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.formPeminjaman input[type="text"]:focus,
+.formPeminjaman input[type="date"]:focus {
+  border-color: var(--blue);
+  outline: none;
+}
+
+.formPeminjaman button {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formPeminjaman button:hover {
+  background-color: var(--dark-blue);
+}
+
+/* Update for white table headers */
+/* Specific to the table header */
+table thead th, table thead td {
+  background-color: var(--blue);
+  color: #fff !important; /* Make sure the header text is white */
+}
+
+
+table th, table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray);
+}
