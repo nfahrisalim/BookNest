@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan Perpustakaan</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/styleD.css">
     <!-- Importing ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -21,61 +22,55 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="student.html">
                         <span class="icon">
                             <ion-icon name="library-outline"></ion-icon>
                         </span>
                         <span class="title">Perpustakaan</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="#">
+                    <a href="Admin.html">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="#">
+                    <a href="Borrow.html">
                         <span class="icon">
                             <ion-icon name="book-outline"></ion-icon>
                         </span>
                         <span class="title">Peminjaman</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="#">
+                    <a href="Pengunjung.html">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
                         <span class="title">Pengunjung</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="#">
+                    <a href="Notification.html">
                         <span class="icon">
                             <ion-icon name="notifications-outline"></ion-icon>
                         </span>
                         <span class="title">Notifikasi</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="#">
+                    <a href="report.html">
                         <span class="icon">
                             <ion-icon name="stats-chart-outline"></ion-icon>
                         </span>
                         <span class="title">Laporan</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="#">
+                    <a href="signin.html">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -100,125 +95,51 @@
                 </div>
 
                 <div class="user">
-                    <img src="assets/imgs/user.jpg" alt="User">
+                    <img src="assets/imgs/Ragilnata.jpg" alt="User">
                 </div>
             </div>
 
             <!-- =============== Report Section =============== -->
-            <div class="details">
-                <!-- Laporan Pengunjung -->
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Laporan Pengunjung</h2>
-                        <button onclick="convertToPDF('pengunjungTable')" class="btn">Convert ke PDF</button>
-                        <button onclick="convertToExcel('pengunjungTable')" class="btn">Convert ke Excel</button>
-                    </div>
+            <div class="container">
+                <h2>Laporan Sirkulasi</h2>
 
-                    <table id="pengunjungTable">
-                        <thead>
-                            <tr>
-                                <td>Nama</td>
-                                <td>Waktu Kunjungan</td>
-                                <td>Keperluan</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Ahmad Syarif</td>
-                                <td>08:30 AM</td>
-                                <td>Membaca Buku</td>
-                            </tr>
-                            <tr>
-                                <td>Siti Aisyah</td>
-                                <td>09:00 AM</td>
-                                <td>Peminjaman Buku</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <table id="report-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>ID SKL</th>
+                            <th>Buku</th>
+                            <th>Peminjam</th>
+                            <th>Tgl Pinjam</th>
+                            <th>Jatuh Tempo</th>
+                            <th>Tgl Dikembalikan</th>
+                            <th>Denda</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Table rows will be dynamically generated by JavaScript -->
+                    </tbody>
+                </table>
+            
+                <!-- Pagination Controls -->
+                <div class="actions-container">
+                    <div class="total-penalty" id="total-penalty">Total Denda: Rp. 0</div>
+                    <button class="print-btn" onclick="window.print()">Print</button>
                 </div>
-
-                <!-- Laporan Peminjaman -->
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Laporan Peminjaman</h2>
-                        <button onclick="convertToPDF('peminjamanTable')" class="btn">Convert ke PDF</button>
-                        <button onclick="convertToExcel('peminjamanTable')" class="btn">Convert ke Excel</button>
+                
+                <!-- Pagination Section -->
+                <div class="pagination-container">
+                    <div class="pagination-info" id="page-info">Page 1 of 2</div>
+                    <div class="buttons">
+                        <button class="prev-btn" id="prevBtn" disabled>Previous</button>
+                        <button class="next-btn" id="nextBtn">Next</button>
                     </div>
-
-                    <table id="peminjamanTable">
-                        <thead>
-                            <tr>
-                                <td>Nama</td>
-                                <td>Judul Buku</td>
-                                <td>Tanggal Pinjam</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Rudi Hartono</td>
-                                <td>Metode Penelitian</td>
-                                <td>2024-10-05</td>
-                            </tr>
-                            <tr>
-                                <td>Lina Mahendra</td>
-                                <td>Data Science</td>
-                                <td>2024-10-06</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
+                
 
-                <!-- Laporan Pengembalian -->
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Laporan Pengembalian</h2>
-                        <button onclick="convertToPDF('pengembalianTable')" class="btn">Convert ke PDF</button>
-                        <button onclick="convertToExcel('pengembalianTable')" class="btn">Convert ke Excel</button>
-                    </div>
-
-                    <table id="pengembalianTable">
-                        <thead>
-                            <tr>
-                                <td>Nama</td>
-                                <td>Judul Buku</td>
-                                <td>Tanggal Pengembalian</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Ahmad Syarif</td>
-                                <td>Metode Penelitian</td>
-                                <td>2024-10-07</td>
-                            </tr>
-                            <tr>
-                                <td>Siti Aisyah</td>
-                                <td>Data Science</td>
-                                <td>2024-10-07</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Function to convert table to PDF using jsPDF
-        function convertToPDF(tableId) {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            doc.text("Laporan Perpustakaan", 14, 10);
-            doc.autoTable({ html: `#${tableId}`, startY: 20 });
-            doc.save(`${tableId}.pdf`);
-        }
-
-        // Function to convert table to Excel using SheetJS
-        function convertToExcel(tableId) {
-            var wb = XLSX.utils.table_to_book(document.getElementById(tableId), { sheet: "Laporan" });
-            XLSX.writeFile(wb, `${tableId}.xlsx`);
-        }
-    </script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/report.js"></script>
+    <script src="assets/js/List.js"></script>
 </body>
 
 </html>

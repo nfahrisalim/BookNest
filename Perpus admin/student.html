@@ -4,58 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Online</title>
+    <title>Library Dashboard</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/student.css">
+    <!-- Importing ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <style>
-        /* Additional CSS for buttons */
-        .btn {
-            background-color: var(--blue);
-            color: white;
-            border-color: solid 0.5px white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #10105b; /* Darker blue for hover effect */
-        }
-
-        .btn:disabled {
-            background-color: #ccc; /* Gray for disabled state */
-            cursor: not-allowed;
-        }
-
-        .formPeminjaman {
-            background: var(--gray);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-
-        .formPeminjaman label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .formPeminjaman input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid var(--black2);
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .formPeminjaman button {
-            width: 100%;
-        }
-    </style>
 </head>
 
 <body>
@@ -64,47 +18,59 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="student.html">
                         <span class="icon">
                             <ion-icon name="library-outline"></ion-icon>
                         </span>
                         <span class="title">Perpustakaan</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="online_library.html">
+                    <a href="Admin.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Borrow.html">
                         <span class="icon">
                             <ion-icon name="book-outline"></ion-icon>
                         </span>
-                        <span class="title">Buku</span>
+                        <span class="title">Peminjaman</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="#returnBooks">
+                    <a href="Pengunjung.html">
                         <span class="icon">
-                            <ion-icon name="return-down-back-outline"></ion-icon>
+                            <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">Kembalikan Buku</span>
+                        <span class="title">Pengunjung</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="#borrowBooks">
+                    <a href="Notification.html">
                         <span class="icon">
-                            <ion-icon name="checkmark-circle-outline"></ion-icon>
+                            <ion-icon name="notifications-outline"></ion-icon>
                         </span>
-                        <span class="title">Pinjam Buku</span>
+                        <span class="title">Notifikasi</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="index.html">
+                    <a href="report.html">
+                        <span class="icon">
+                            <ion-icon name="stats-chart-outline"></ion-icon>
+                        </span>
+                        <span class="title">Laporan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="signin.html">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
-                        <span class="title">Keluar</span>
+                        <span class="title">Sign Out</span>
                     </a>
                 </li>
             </ul>
@@ -119,127 +85,81 @@
 
                 <div class="search">
                     <label>
-                        <input type="text" placeholder="Cari Buku...">
+                        <input type="text" placeholder="Search here">
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
 
                 <div class="user">
-                    <img src="assets/imgs/user.jpg" alt="User">
+                    <img src="assets/imgs/Ragilnata.jpg" alt="">
                 </div>
             </div>
 
-            <!-- =============== Peminjaman Section =============== -->
-            <div class="details">
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Daftar Buku</h2>
-                    </div>
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Judul Buku</td>
-                                <td>Pengarang</td>
-                                <td>Status</td>
-                                <td>Aksi</td>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>Pemrograman Python</td>
-                                <td>Ahmad Syarif</td>
-                                <td>Tersedia</td>
-                                <td><button class="btn" onclick="borrowBook('Pemrograman Python')">Pinjam</button></td>
-                            </tr>
-
-                            <tr>
-                                <td>Pemrograman Java</td>
-                                <td>Siti Aisyah</td>
-                                <td>Tersedia</td>
-                                <td><button class="btn" onclick="borrowBook('Pemrograman Java')">Pinjam</button></td>
-                            </tr>
-
-                            <tr>
-                                <td>Belajar Web Design</td>
-                                <td>Rudi Hartono</td>
-                                <td>Tidak Tersedia</td>
-                                <td><button class="btn" disabled>Tidak Bisa Dipinjam</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- =============== Showcase Buku =============== -->
+            <div class="bookShowcase">
+                <div class="cardHeader">
+                    <h2>Buku</h2>
+                    <a href="#" class="btn">Lihat Semua</a>
                 </div>
 
-                <!-- =============== Kembalikan Buku Section =============== -->
-                <div class="recentCustomers" id="returnBooks">
-                    <div class="cardHeader">
-                        <h2>Kembalikan Buku</h2>
+                    <div class="carousel">
+                        <div class="card">
+                            <img src="assets/imgs/Books/book1.jpg" alt="Kyoukai No Kanata">
+                            <div class="bookInfo">
+                                <h4>Kyoukai No Kanata</h4>
+                                <p>Lokasi: Rak A1</p>
+                                <button class="btn more-info" data-title="Kyoukai No Kanata" data-description="Deskripsi buku 1..." data-location="Rak A1">Deskripsi Lebih Lanjut</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="assets/imgs/Books/book2.jpg" alt="Introductions To Alghorithm">
+                            <div class="bookInfo">
+                                <h4>Introductions To Alghorithm</h4>
+                                <p>Lokasi: Rak B3</p>
+                                <button class="btn more-info" data-title="Introductions To Alghorithm" data-description="Deskripsi buku 2..." data-location="Rak B3">Deskripsi Lebih Lanjut</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="assets/imgs/Books/book3.jpg" alt="Masked Swordsman Saber Chronicles">
+                            <div class="bookInfo">
+                                <h4>Masked Swordsman Saber Chronicles</h4>
+                                <p>Lokasi: Rak C6</p>
+                                <button class="btn more-info" data-title="Masked Swordsman Saber Chronicles" data-description="Deskripsi buku 2..." data-location="Rak C6">Deskripsi Lebih Lanjut</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="assets/imgs/Books/book4.jpg" alt="1001 Nights">
+                            <div class="bookInfo">
+                                <h4>1001 Nights</h4>
+                                <p>Lokasi: Rak D2</p>
+                                <button class="btn more-info" data-title="1001 Nights" data-description="Deskripsi buku 2..." data-location="Rak D2">Deskripsi Lebih Lanjut</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="assets/imgs/Books/book5.jpg" alt="Dahsyatnya Siksa Neraka">
+                            <div class="bookInfo">
+                                <h4>Dahsyatnya Siksa Neraka</h4>
+                                <p>Lokasi: Rak E8</p>
+                                <button class="btn more-info" data-title="Dahsyatnya Siksa Neraka" data-description="Deskripsi buku 2..." data-location="Rak E8">Deskripsi Lebih Lanjut</button>
+                            </div>
+                        </div>
                     </div>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Judul Buku</td>
-                                <td>Pengarang</td>
-                                <td>Aksi</td>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>Pemrograman Python</td>
-                                <td>Ahmad Syarif</td>
-                                <td><button class="btn" onclick="returnBook('Pemrograman Python')">Kembalikan</button></td>
-                            </tr>
-
-                            <tr>
-                                <td>Pemrograman Java</td>
-                                <td>Siti Aisyah</td>
-                                <td><button class="btn" onclick="returnBook('Pemrograman Java')">Kembalikan</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- =============== Formulir Peminjaman Baru =============== -->
-                <div class="recentCustomers" id="borrowBooks">
-                    <div class="cardHeader">
-                        <h2>Pinjam Buku</h2>
+                    <!-- Modal Popup -->
+                    <div id="bookModal" class="modal">
+                        <div class="modal-content">
+                            <span class="closeBtn">&times;</span>
+                            <h2 id="modalTitle"></h2>
+                            <p id="modalDescription"></p>
+                            <p id="modalLocation"></p>
+                        </div>
                     </div>
-
-                    <form class="formPeminjaman">
-                        <label for="namaPeminjam">Nama Peminjam:</label>
-                        <input type="text" id="namaPeminjam" name="namaPeminjam" placeholder="Masukkan nama peminjam..." required>
-
-                        <label for="judulBuku">Judul Buku:</label>
-                        <input type="text" id="judulBuku" name="judulBuku" placeholder="Masukkan judul buku..." required>
-
-                        <label for="tanggalPeminjaman">Tanggal Peminjaman:</label>
-                        <input type="date" id="tanggalPeminjaman" name="tanggalPeminjaman" required>
-
-                        <label for="batasPengembalian">Batas Pengembalian:</label>
-                        <input type="date" id="batasPengembalian" name="batasPengembalian" required>
-
-                        <button type="submit" class="btn">Tambahkan Peminjaman</button>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="assets/js/main.js"></script>
-    <script>
-        function borrowBook(bookTitle) {
-            alert(`Anda telah meminjam ${bookTitle}`);
-            // Logika untuk meminjam buku bisa ditambahkan di sini
-        }
-
-        function returnBook(bookTitle) {
-            alert(`Anda telah mengembalikan ${bookTitle}`);
-            // Logika untuk mengembalikan buku bisa ditambahkan di sini
-        }
-    </script>
 </body>
 
 </html>

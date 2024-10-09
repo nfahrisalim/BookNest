@@ -1,6 +1,10 @@
-// add hovered class to selected list item
+// Get all list items in the navigation
 let list = document.querySelectorAll(".navigation li");
 
+// Get the current page filename
+let currentPage = window.location.pathname.split("/").pop();
+
+// Function to remove hover from all and add to the current one
 function activeLink() {
   list.forEach((item) => {
     item.classList.remove("hovered");
@@ -8,7 +12,17 @@ function activeLink() {
   this.classList.add("hovered");
 }
 
+// Add event listener to highlight hovered menu item
 list.forEach((item) => item.addEventListener("mouseover", activeLink));
+
+// Highlight the menu item based on the current page
+list.forEach((item) => {
+  let link = item.querySelector("a").getAttribute("href");
+  
+  if (link === currentPage) {
+    item.classList.add("hovered"); // Add the hovered class to the corresponding list item
+  }
+});
 
 // Menu Toggle
 let toggle = document.querySelector(".toggle");
