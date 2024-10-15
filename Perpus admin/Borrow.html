@@ -160,7 +160,7 @@
                         <h2>Tambah Peminjaman</h2>
                     </div>
                 
-                    <form class="formPeminjaman">
+                    <form class="formPeminjaman" id="form-pinjam">
                         <label for="namaPeminjam">Nama Peminjam:</label>
                         <input type="text" id="namaPeminjam" name="namaPeminjam" placeholder="Masukkan nama peminjam...">
                 
@@ -182,12 +182,12 @@
                             <div class="progressBar">
                                 <div class="progress" style="width: 70%;"></div>
                             </div>
-                            <p class="progressLabel">7 dari 10 buku telah dipinjam</p>
+                            <p class="progressLabel"> <span id="angkaPinjaman">0</span> dari 2 buku telah dipinjam</p>
                         </div>
                     </div>
                 </div>                
+    <script src="assets/js/borrow.js"></script>
 
-    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
