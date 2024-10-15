@@ -1,176 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Perpustakaan</title>
-    <link rel="stylesheet" href="assets/css/login-style.css">
+    <link rel="stylesheet" href="assets/css/login-style.css" />
     <!-- Importing ionicons -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <style>
-        /* =========== Google Fonts ============ */
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+      /* =========== Google Fonts ============ */
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
-/* =============== Globals ============== */
-* {
-  font-family: "Ubuntu", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      /* =============== Globals ============== */
+      * {
+        font-family: "Ubuntu", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-:root {
-  --blue: #2a2185;
-  --white: #fff;
-  --gray: #f5f5f5;
-  --black1: #222;
-  --black2: #999;
-}
+      :root {
+        --blue: #2a2185;
+        --white: #fff;
+        --gray: #f5f5f5;
+        --black1: #222;
+        --black2: #999;
+      }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--gray);
-}
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--gray);
+      }
 
-.login-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-}
+      .login-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+      }
 
-.login-box {
-  background: var(--white);
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-  width: 350px;
-  text-align: center;
-}
+      .login-box {
+        background: var(--white);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        text-align: center;
+      }
 
-.login-box h2 {
-  margin-bottom: 20px;
-  color: var(--blue);
-  font-size: 2rem;
-  font-weight: 600;
-}
+      .login-box h2 {
+        margin-bottom: 20px;
+        color: var(--blue);
+        font-size: 2rem;
+        font-weight: 600;
+      }
 
-.inputBox {
-  position: relative;
-  margin: 20px 0;
-}
+      .inputBox {
+        position: relative;
+        margin: 20px 0;
+      }
 
-.inputBox ion-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-  color: var(--blue);
-}
+      .inputBox ion-icon {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+        color: var(--blue);
+      }
 
-.inputBox input {
-  width: 100%;
-  padding: 10px 35px;
-  background: var(--gray);
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  border-radius: 5px;
-}
+      .inputBox input {
+        width: 100%;
+        padding: 10px 35px;
+        background: var(--gray);
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        border-radius: 5px;
+      }
 
-.inputBox label {
-  position: absolute;
-  top: 10px;
-  left: 35px;
-  color: var(--black2);
-  font-size: 0.9rem;
-  pointer-events: none;
-  transition: 0.5s;
-}
+      .inputBox label {
+        position: absolute;
+        top: 10px;
+        left: 35px;
+        color: var(--black2);
+        font-size: 0.9rem;
+        pointer-events: none;
+        transition: 0.5s;
+      }
 
-.inputBox input:focus ~ label,
-.inputBox input:valid ~ label {
-  top: -15px;
-  left: 35px;
-  font-size: 0.75rem;
-  color: var(--blue);
-}
+      .inputBox input:focus ~ label,
+      .inputBox input:valid ~ label {
+        top: -15px;
+        left: 35px;
+        font-size: 0.75rem;
+        color: var(--blue);
+      }
 
-.remember {
-  text-align: left;
-  font-size: 0.85rem;
-  margin-bottom: 20px;
-}
+      .remember {
+        text-align: left;
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+      }
 
-.btn {
-  width: 100%;
-  padding: 10px;
-  background: var(--blue);
-  color: var(--white);
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-}
+      .btn {
+        width: 100%;
+        padding: 10px;
+        background: var(--blue);
+        color: var(--white);
+        border: none;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
 
-.btn:hover {
-  background-color: #10105b;
-}
+      .btn:hover {
+        background-color: #10105b;
+      }
 
-.signup-link {
-  margin-top: 10px;
-  font-size: 0.85rem;
-}
+      .signup-link {
+        margin-top: 10px;
+        font-size: 0.85rem;
+      }
 
-.signup-link a {
-  color: var(--blue);
-  text-decoration: none;
-}
+      .signup-link a {
+        color: var(--blue);
+        text-decoration: none;
+      }
 
-.signup-link a:hover {
-  text-decoration: underline;
-}
-
+      .signup-link a:hover {
+        text-decoration: underline;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="login-container">
-        <div class="login-box">
-            <h2>Login</h2>
-            <form action="dashboard.html" method="POST">
-                <div class="inputBox">
-                    <ion-icon name="person-outline"></ion-icon>
-                    <input type="text" name="username" required>
-                    <label>Username</label>
-                </div>
-                <div class="inputBox">
-                    <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password" name="password" required>
-                    <label>Password</label>
-                </div>
-                <div class="remember">
-                    <label><input type="checkbox"> Remember Me</label>
-                </div>
-                <button type="submit" class="btn">Login</button>
-                <!-- Bagian signup-link -->
-                <div class="signup-link">
-                    <p>Belum punya akun? <a href="signup.html">Sign Up</a></p>
-                </div>
-
-            </form>
-        </div>
+      <div class="login-box">
+        <h2>Login</h2>
+        <form id="login-form" method="POST">
+          <div class="inputBox">
+            <ion-icon name="person-outline"></ion-icon>
+            <input type="text" name="username" required />
+            <label>Username</label>
+          </div>
+          <div class="inputBox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" name="password" required />
+            <label>Password</label>
+          </div>
+          <div class="remember">
+            <label><input type="checkbox" /> Remember Me</label>
+          </div>
+          <button id="submit-button" type="submit" class="btn">Login</button>
+          <!-- Bagian signup-link -->
+          <div class="signup-link">
+            <p>Belum punya akun? <a href="signup.html">Sign Up</a></p>
+          </div>
+        </form>
+      </div>
     </div>
-</body>
 
+    <script src="assets\js\signin.js"></script>
+  </body>
 </html>

@@ -31,18 +31,19 @@
 }
 
 .formPeminjaman button:hover {
-  background-color: var(--dark-blue);
+  background-color: blue;
 }
 
 /* Update for white table headers */
 /* Specific to the table header */
-table thead th, table thead td {
+table thead th,
+table thead td {
   background-color: var(--blue);
   color: #fff !important; /* Make sure the header text is white */
 }
 
-
-table th, table td {
+table th,
+table td {
   padding: 15px;
   text-align: left;
   border-bottom: 1px solid var(--gray);
